@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  
+
+}
+
+@layer base {
+  :root {
+     
+      --background-app-rgb: 240, 255, 255;
+      --color-primary-900: 74, 109, 255;
+      --color-primary-800: 92, 124, 255;
+      --color-primary-700: 110, 138, 255;
+      --color-primary-600: 128, 153, 255;
+      --color-primary-500: 146, 167, 255;
+      --color-primary-400: 164, 182, 255;
+      --color-primary-300: 183, 197, 255;
+      --color-primary-200: 201, 211, 255;
+      --color-primary-100: 219, 226, 255;
+      --color-primary-50: 228, 233, 255;
+      --color-secondary-900: 17, 24, 39;
+      --color-secondary-800: 31, 41, 55;
+      --color-secondary-700: 55, 65, 81;
+      --color-secondary-600: 75, 85, 99;
+      --color-secondary-500: 107, 114, 128;
+      --color-secondary-400: 156, 163, 175;
+      --color-secondary-300: 209, 213, 219;
+      --color-secondary-200: 229, 231, 235;
+      --color-secondary-100: 243, 244, 246;
+      --color-secondary-50: 249, 250, 251;
+      --color-secondary-0: 255, 255, 255;
+      --color-success: 0, 192, 115;
+      --color-warning: 255, 153, 0;
+      --color-error: 255, 71, 87;
+      --color-red-500: 239, 68, 68;
+      --color-red-300: 252, 165, 165;
+    
+    /* &.dark-mode {
+      --color-secondary-900: 249, 250, 251;
+      --color-secondary-800: 243, 244, 246;
+      --color-secondary-700: 229, 231, 235;
+      --color-secondary-600: 209, 213, 219;
+      --color-secondary-500: 156, 163, 175;
+      --color-secondary-400: 107, 114, 128;
+      --color-secondary-300: 75, 85, 99;
+      --color-secondary-200: 55, 65, 81;
+      --color-secondary-100: 31, 41, 55;
+      --color-secondary-50: 17, 24, 39;
+      --color-secondary-0: 24, 33, 47;
+      --backdrop-color: 0, 0, 0;
+    } */
+  }
+}
+
+@layer components {
+  .textField__input {
+    @apply  py-3 px-4 rounded-xl text-secondary-400 border border-secondary-500 bg-inherit hover:border-primary-700 focus:border-primary-700  transition-all duration-300 ease-out  ;
+  }
+  .btn {
+    @apply px-3 py-3 font-bold rounded-xl transition-all duration-300;
+  }
+  .btn--primary {
+    @apply px-4 py-3 bg-secondary-500 text-white hover:bg-primary-800  ;
+  }
+  .btn--secondary {
+    @apply border border-secondary-500 text-secondary-100;
+  }
+  .btn--outline {
+    @apply border border-secondary-700 text-secondary-700;
+  }
+  .btn--danger {
+    @apply border border-rose-700 text-rose-700;
+  }
+  .badge {
+    @apply inline-block whitespace-nowrap rounded-2xl px-2 py-0.5;
+  }
+  .badge--primary {
+    @apply bg-primary-900 text-white;
+  }
+  .badge--secondary {
+    @apply border border-secondary-200 text-secondary-400;
+  }
+  .badge--success {
+    @apply bg-green-500 text-white;
+  }
+  .badge--danger {
+    @apply bg-red-500 text-white;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 10;
+  min-height: 100vh;
+  user-select: none;
+  background-color: rgb(var(--color-secondary-900));
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  /* border: none; */
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  overflow-x: auto;
+  
+}
+
+table .title-row {
+  background-color: rgb(var(--color-secondary-100));
+}
+
+table td,
+table th {
+  /* text-align: left; */
+  white-space: nowrap;
+  
+}
+
+/* table th {
+  padding: 1rem 1rem;
+  color: rgb(var(--color-secondary-600));
+  font-size: 0.9rem;
+} */
+
+table td {
+  font-size: 1rem;
+  padding: 1rem 1rem 1rem 0;
+  color: rgb(var(--color-secondary-400));
+}
+
+@media screen and (max-width: 1024px) {  
+  table td {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.5rem 0.5rem 0;
+  }
+}
