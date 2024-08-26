@@ -4,6 +4,7 @@ import AddNewProduct from "./components/AddNewProduct";
 import ProductList from "./components/ProductList";
 import Filters from "./components/Filters";
 import useLocalStorage from "./hooks/useLocalStorage";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   // const [currentProduct, setCurrentProduct] = useState({});
@@ -71,8 +72,9 @@ function App() {
 
   return (
     <div className="container mt-10 flex flex-col gap-y-8 lg:flex-row lg:gap-x-8">
+      <Toaster/>
       <div className="flex flex-col gap-y-8 lg:w-1/2">
-        <AddNewCategory setCategories={setCategories} />
+        <AddNewCategory categories={categories} setCategories={setCategories} />
         <AddNewProduct categories={categories} setProducts={setProducts} mapCategories={mapCategories}/>
       </div>
       <div className="flex flex-col gap-y-8 lg:w-1/2">
