@@ -1,23 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Label from "../ui/Label";
 import TextField from "../ui/TextField";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
-function AddNewCategory({setCategories}) {
+function AddNewCategory({categories,setCategories}) {
   const [open, setOpen] = useState(false);
   const { register, handleSubmit,reset } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     if (data.title && data.description) {
       const newCategory = { id: Date.now(), title: data.title, description:data.description}; 
       setCategories((prevState) => [...prevState, newCategory]);
       reset(); // Reset the form
     } else {
-      alert("Please fill in a valid title and description.");
+      toast.error("Please fill in a valid title and description.")
     }
   };
 
+  useEffect(()=>{
+    if(categories.length===0) setOpen(true);
+  },[categories])
   
 
   return (
