@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import Label from "../ui/Label";
 import TextField from "../ui/TextField";
 import RHFSelect from "../ui/RHFSelect";
+import toast from "react-hot-toast";
 
 function AddNewProduct({ mapCategories, setProducts }) {
   const { register, handleSubmit, reset } = useForm();
@@ -20,7 +21,7 @@ function AddNewProduct({ mapCategories, setProducts }) {
       setProducts((prevState) => [...prevState, newProduct]);
       reset(); // Reset the form
     } else {
-      alert("Please fill in a valid title and quantity.");
+      toast.error("Please fill in a valid title, quantity and category.")
     }
   };
 
